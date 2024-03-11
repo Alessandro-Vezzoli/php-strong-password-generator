@@ -15,15 +15,11 @@
     </form>
 
     <?php
-    // Verifica se il modulo è stato inviato
     if ($_SERVER["REQUEST_METHOD"] == "GET") {
-        // Include il file delle funzioni
         include('functions.php');
 
-        // Ottieni la lunghezza della password dal modulo
         $passwordLength = $_GET['passwordLength'];
 
-        // Genera e mostra la password
         $generatedPassword = generatePassword($passwordLength);
         echo '<p>La tua password generata: ' . $generatedPassword . '</p>';
     }
